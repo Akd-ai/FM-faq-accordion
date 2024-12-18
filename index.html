@@ -1,48 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | FAQ accordion</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | FAQ accordion</title>
+  </head>
+  <body>
+    <main>
+      <div class="accordion">
+        <div class="header">
+          <span
+            ><img src="./assets/images/icon-star.svg" alt="faq-star-icon"
+          /></span>
+          <h1>FAQS</h1>
+        </div>
+        <div class="accordion-item">
+          <div>
+            <span>What is Frontend Mentor, and how will it help me?</span>
+            <button type="button" id="toggle-btn" class="toggle-btn">
+              <img
+                src="./assets/images/icon-plus.svg"
+                id="icon-image"
+                alt="plus-icon"
+              />
+            </button>
+          </div>
+          <div class="accordion-content">
+            <p id="contentText1">
+              Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+              for portfolio building.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div>
+            <span>Is Frontend Mentor free?</span>
+            <button type="button" id="toggle-btn" class="toggle-btn">
+              <img
+                src="./assets/images/icon-plus.svg"
+                id="icon-image"
+                alt="plus-icon"
+              />
+            </button>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Yes, Frontend Mentor offers both free and premium coding
+              challenges, with the free option providing access to a range of
+              projects suitable for all skill levels.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div>
+            <span>Can I use Frontend Mentor projects in my portfolio?</span>
+            <button type="button" id="toggle-btn" class="toggle-btn">
+              <img
+                src="./assets/images/icon-plus.svg"
+                id="icon-image"
+                alt="plus-icon"
+              />
+            </button>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Yes, you can use projects completed on Frontend Mentor in your
+              portfolio. It's an excellent way to showcase your skills to
+              potential employers!
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div>
+            <span>
+              How can I get help if I'm stuck on a Frontend Mentor
+              challenge?</span
+            >
+            <button type="button" id="toggle-btn" class="toggle-btn">
+              <img
+                src="./assets/images/icon-plus.svg"
+                id="icon-image"
+                alt="plus-icon"
+              />
+            </button>
+          </div>
+          <div class="accordion-content">
+            <p>
+              The best place to get help is inside Frontend Mentor's Discord
+              community. There's a help channel where you can ask questions and
+              seek support from other community members.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
 
-  FAQs
+    <script>
+      const toggleButtons = document.querySelectorAll(".toggle-btn");
+      const iconImage = document.querySelectorAll("#icon-image");
+      const textOne = document.getElementById("contentText1");
+      toggleButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Find the content associated with this button
+          const content = button.parentElement.nextElementSibling;
 
-  What is Frontend Mentor, and how will it help me?
+          // Toggle visibility
+          content.style.display =
+            content.style.display === "block" ? "none" : "block";
 
-  Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.
+          // const accordionContent = [
+          //   {
+          //     id: 1,
+          //     content1:
+          //       "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.",
+          //     img: "/assets/images/icon-minus.svg",
+          //   },
+          //   {
+          //     id: 2,
+          //     content2:
+          //       "Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.",
+          //     img: "/assets/images/icon-minus.svg",
+          //   },
+          //   {
+          //     id: 3,
+          //     content3:
+          //       "Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!",
+          //     img: "/assets/images/icon-minus.svg",
+          //   },
+          //   {
+          //     id: 4,
+          //     content4:
+          //       "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.",
+          //     img: "/assets/images/icon-minus.svg",
+          //   },
+          // ];
 
-  Is Frontend Mentor free?
+          // if (content.style.display === "block") {
+          //   let imgMinus = "url(/assets/images/icon-minus.svg)";
+          //   iconImage.style.src = imgMinus;
+          //   // iconImage.src = "/assets/images/icon-minus.svg"
+          //   // inages.forEach()("src", "/assets/images/icon-minus.svg");
+          // } else {
+          // console.log("None!"); 
+          // }
 
-  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
-  option providing access to a range of projects suitable for all skill levels.
-
-  Can I use Frontend Mentor projects in my portfolio?
-
-  Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
-  way to showcase your skills to potential employers!
-
-  How can I get help if I'm stuck on a Frontend Mentor challenge?
-  
-  The best place to get help is inside Frontend Mentor's Discord community. There's a help 
-  channel where you can ask questions and seek support from other community members.
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+          //  window.addEventListener("DOMContentLoaded", function () {
+          //   const item = accordionContent[currentFaq];
+          //   textOne.textContent = item.content1;
+          //   // iconImage.src = item.img;
+          //  });
+        });
+      });
+    </script>
+  </body>
 </html>

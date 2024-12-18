@@ -1,0 +1,198 @@
+@font-face {
+  font-family: Work Sans;
+  src: url(/assets/fonts/static/WorkSans-Bold.ttf);
+  font-weight: 400, 600, 700;
+}
+@font-face {
+  font-family: Work Sans semi-bold;
+  src: url(/assets/fonts/static/WorkSans-SemiBold.ttf);
+  font-weight: 400, 600, 700;
+}
+@font-face {
+  font-family: Work Sans Regular;
+  src: url(/assets/fonts/static/WorkSans-Regular.ttf);
+  font-weight: 400, 600, 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+}
+html,
+body {
+  overflow: visible;
+}
+body {
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--Light-pink);
+  background-image: url(/assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  /* transition: all 0.4s ease-in-out; */
+}
+main {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.accordion {
+  max-width: 580px;
+  width: 100%;
+  /* height: 100vh; */
+  padding: 1.4em;
+  background-color: var(--White);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  display: inline;
+  font-family: Work Sans;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+.accordion-item {
+  margin: 45px 0;
+}
+.accordion-item span {
+  font-family: Work Sans semi-bold;
+  font-size: 1em;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.accordion-content {
+  display: none;
+}
+.accordion-content p {
+  background-color: var(--Light-pink);
+  font-family: Work Sans Regular;
+  font-size: 1em;
+  font-weight: 400;
+  margin: 1.5em 0;
+  word-wrap: break-word;
+}
+.header span {
+  margin-right: 15px;
+}
+.header span img {
+  width: 25px;
+}
+
+.toggle-btn {
+  margin: 0;
+  padding: 0;
+  float: right;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  vertical-align: text-top;
+}
+
+.toggle-btn-minus {
+    background-image: url();
+    background: url(/assets/images/icon-minus.svg);
+    margin: 0;
+    padding: 0;
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    vertical-align: text-top;
+}
+
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: auto;
+        
+      }
+      .accordion {
+        max-width: 450px;
+        min-height: 80vh;
+        /* top: 35;
+        left: 30;
+        transform: translate(-30 -35); */
+        height: 50%;
+        /* height: fit-content; */
+        padding: 1.4em;
+      }
+}
+@media (max-width: 375px) {
+  body {
+    background-size: auto;
+  }
+  /* main {
+    width: 100%;
+    height: 150vh;
+  } */
+  .accordion {
+    max-width: 390px;
+    /* min-height: 60vh; */
+    padding: 1.4em;
+  }
+
+  .accordion-item {
+    margin: 8% 0;
+  }
+  /* .accordion-item span {
+    font-family: Work Sans semi-bold;
+    font-size: 1em;
+    font-weight: 600;
+    word-wrap: break-word;
+  } */
+  /* .accordion-item:first-child {
+            margin-bottom: 6em;
+          } */
+  /* .accordion-content {
+    display: none;
+  } */
+  /* .accordion-content p {
+    background-color: var(--Light-pink);
+    font-family: Work Sans Regular;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 1.5em 0;
+    word-wrap: break-word;
+  } */
+  /* .header span {
+    margin-right: 15px;
+  } */
+  /* .header span img {
+    width: 25px;
+  } */
+
+  /* .toggle-btn {
+    margin: 0;
+    padding: 0;
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    vertical-align: text-top;
+  } */
+}
